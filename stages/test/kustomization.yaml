@@ -13,3 +13,7 @@ patches:
   target:
     kind: Service
     name: kargo-demo
+images:
+- name: nginx
+  newName: nginx
+  newTag: 1.25.2
