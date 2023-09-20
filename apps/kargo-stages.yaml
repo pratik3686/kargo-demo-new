@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: 'kargo-stages'
+spec:
+  destination:
+    name: 'in-cluster'
+    namespace: 'kargo-demo'
+  source:
+    path: 'kargo-stages'
+    repoURL: 'https://github.com/morey-tech/kargo-demo/'
+    targetRevision: HEAD
+  project: 'default'
+  syncPolicy:
+    automated: {}

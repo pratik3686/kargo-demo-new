@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: 'kargo'
+spec:
+  destination:
+    name: 'in-cluster'
+    namespace: 'kargo'
+  source:
+    chart: 'kargo'
+    repoURL: 'ghcr.io/akuity/kargo-charts'
+    targetRevision: 0.1.0
+    helm:
+      parameters:
+      - name: "api.service.type"
+        value: NodePort
+      - name: "api.service.nodePort"
+        value: '30084'
+      - name: "api.adminAccount.password"
+        value: admin
+      - name: "api.adminAccount.tokenSigningKey"
+        value: '""'
+  project: 'default'
+  syncPolicy:
+    automated: {}
+    syncOptions:
+      - CreateNamespace=true

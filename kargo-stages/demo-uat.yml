@@ -1,0 +1,20 @@
+apiVersion: kargo.akuity.io/v1alpha1
+kind: Stage
+metadata:
+  name: uat
+  namespace: kargo-demo
+spec:
+  subscriptions:
+    upstreamStages:
+    - name: test
+  promotionMechanisms:
+    gitRepoUpdates:
+    - repoURL: https://github.com/morey-tech/kargo-demo/
+      writeBranch: main
+      kustomize:
+        images:
+        - image: nginx
+          path: stages/uat
+    argoCDAppUpdates:
+    - appName: kargo-demo-uat
+      appNamespace: argocd
