@@ -20,6 +20,8 @@ spec:
         value: admin
       - name: "api.adminAccount.tokenSigningKey"
         value: '""'
+      - name: "api.argocd.urls"
+        value: "https://localhost:8080"
   project: 'default'
   syncPolicy:
     automated: {}
