@@ -11,3 +11,5 @@ spec:
     repoURL: 'https://github.com/morey-tech/kargo-demo/'
     targetRevision: HEAD
   project: 'default'
+  syncPolicy:
+    automated: {}
