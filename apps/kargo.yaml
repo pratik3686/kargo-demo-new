@@ -11,17 +11,17 @@ spec:
     repoURL: 'ghcr.io/akuity/kargo-charts'
     targetRevision: 0.1.0
     helm:
-      parameters:
-      - name: "api.service.type"
-        value: NodePort
-      - name: "api.service.nodePort"
-        value: '30084'
-      - name: "api.adminAccount.password"
-        value: admin
-      - name: "api.adminAccount.tokenSigningKey"
-        value: '""'
-      - name: 'api.argocd.urls.""'
-        value: "https://localhost:8080"
+      valuesObject:
+        api:
+          service:
+            type: NodePort
+            nodePort: 30084
+          adminAccount:
+            password: admin
+            tokenSigningKey: ""
+          argocd:
+            urls:
+              "": "https://localhost:8080"
   project: 'default'
   syncPolicy:
     automated: {}
