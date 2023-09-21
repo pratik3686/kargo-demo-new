@@ -5,6 +5,10 @@ metadata:
   namespace: kargo-demo
 spec:
   subscriptions:
+    repos:
+      git:
+        - repoURL: https://github.com/morey-tech/kargo-demo/
+          branch: stage/test
     upstreamStages:
     - name: test
   promotionMechanisms:
