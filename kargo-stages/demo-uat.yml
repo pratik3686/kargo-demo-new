@@ -10,7 +10,7 @@ spec:
   promotionMechanisms:
     gitRepoUpdates:
     - repoURL: https://github.com/morey-tech/kargo-demo/
-      writeBranch: main
+      writeBranch: stages/uat
       kustomize:
         images:
         - image: nginx
