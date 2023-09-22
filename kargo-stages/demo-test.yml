@@ -10,9 +10,10 @@ spec:
         - repoURL: https://github.com/morey-tech/kargo-demo/
           branch: main
       images:
-        - repoURL: nginx
-          updateStrategy: SemVer
-          semverConstraint: ^1.24.0
+        - repoURL: ghcr.io/morey-tech/demo-app
+          updateStrategy: Latest
+          ignoreTags:
+          - latest
   promotionMechanisms:
     gitRepoUpdates:
       - repoURL: https://github.com/morey-tech/kargo-demo/
