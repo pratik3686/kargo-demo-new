@@ -1,0 +1,27 @@
+apiVersion: kargo.akuity.io/v1alpha1
+kind: Stage
+metadata:
+  name: test
+  namespace: kargo-demo
+spec:
+  subscriptions:
+    repos:
+      git:
+        - repoURL: https://github.com/morey-tech/kargo-demo/
+          branch: main
+      images:
+        - repoURL: ghcr.io/morey-tech/demo-app
+          updateStrategy: Latest
+          ignoreTags:
+          - latest
+  promotionMechanisms:
+    gitRepoUpdates:
+      - repoURL: https://github.com/morey-tech/kargo-demo/
+        writeBranch: stages/test
+        kustomize:
+          images:
+            - image: nginx
+              path: stages/test
+    argoCDAppUpdates:
+      - appName: kargo-demo-test
+        appNamespace: argocd
