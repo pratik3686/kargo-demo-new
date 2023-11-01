@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: nginx 
-        image: 9673483686/some-nginx:placeholder
+        image: 9673483686/some-nginx:0.0.1
         volumeMounts:
         - name: content
           mountPath: /usr/share/nginx/html
