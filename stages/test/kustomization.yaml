@@ -16,7 +16,7 @@ patches:
 images:
 - name: 9673483686/some-nginx
   newName: 9673483686/some-nginx
-  newTag: 0.0.1
+  newTag: 0.0.2
 - name: nginx
   newName: nginx
   newTag: 0.0.1
