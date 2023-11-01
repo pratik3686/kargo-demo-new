@@ -9,7 +9,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/morey-tech/kargo-demo
-    targetRevision: main
+    targetRevision: stage/test
     path: stages/test
   destination:
     server: https://kubernetes.default.svc
