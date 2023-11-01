@@ -8,7 +8,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/morey-tech/kargo-demo
+    repoURL: https://github.com/pratik3686/kargo-demo-new
     targetRevision: stage/prod
     path: stages/prod
   destination:
