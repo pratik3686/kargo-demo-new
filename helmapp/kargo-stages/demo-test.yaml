@@ -18,5 +18,5 @@ spec:
         - image: https://charts.bitnami.com/bitnami
           path: helmapp/stages/test
     argoCDAppUpdates:
-    - appName: kargo-demo-test
+    - appName: kustomize-thanos-app-test
       appNamespace: argocds
