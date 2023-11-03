@@ -6,7 +6,7 @@ metadata:
 spec:
   subscriptions:
     repos:
-      images:
+      version:
       - repoURL: https://charts.bitnami.com/bitnami
         semverConstraint: ^12.0.3
   promotionMechanisms:
