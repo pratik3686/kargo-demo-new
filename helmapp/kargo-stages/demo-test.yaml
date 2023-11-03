@@ -1,8 +1,8 @@
 apiVersion: kargo.akuity.io/v1alpha1
 kind: Stage
 metadata:
-  name: test
-  namespace: kargo-helm
+  name: qa
+  namespace: kargo-demo
 spec:
   subscriptions:
     repos:
