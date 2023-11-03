@@ -6,8 +6,9 @@ metadata:
 spec:
   subscriptions:
     repos:
-      version:
-      - repoURL: https://charts.bitnami.com/bitnami
+      charts:
+      - name: thanos        
+        registryURL: https://argadepp.github.io/helm-chart
         semverConstraint: ^12.0.3
   promotionMechanisms:
     gitRepoUpdates:
@@ -15,7 +16,7 @@ spec:
       writeBranch: stage/test
       kustomize:
         images:
-        - image: https://charts.bitnami.com/bitnami
+        - image: https://argadepp.github.io/helm-chart
           path: helmapp/stages/test
     argoCDAppUpdates:
     - appName: kustomize-thanos-app-test
