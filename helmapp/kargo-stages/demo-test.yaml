@@ -2,7 +2,7 @@ apiVersion: kargo.akuity.io/v1alpha1
 kind: Stage
 metadata:
   name: test
-  namespace: kargo-demo
+  namespace: kargo-helm
 spec:
   subscriptions:
     repos:
