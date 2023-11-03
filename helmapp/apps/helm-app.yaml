@@ -4,7 +4,7 @@ metadata:
   name: kustomize-thanos-app-test
   namespace: argocd
   annotations:
-    kargo.akuity.io/authorized-stage: kargo-demo:test  
+    kargo.akuity.io/authorized-stage: kargo-helm:test  
 spec:
   project: default
   source:
