@@ -13,7 +13,7 @@ spec:
   promotionMechanisms:
     gitRepoUpdates:
     - repoURL: https://github.com/pratik3686/kargo-demo-new
-      writeBranch: stage/test
+      writeBranch: helm/test
       kustomize:
         images:
         - image: https://argadepp.github.io/helm-chart
