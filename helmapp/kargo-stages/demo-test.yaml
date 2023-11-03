@@ -20,4 +20,4 @@ spec:
           path: helmapp/stages/test
     argoCDAppUpdates:
     - appName: kustomize-thanos-app-test
-      appNamespace: argocds
+      appNamespace: argocd
