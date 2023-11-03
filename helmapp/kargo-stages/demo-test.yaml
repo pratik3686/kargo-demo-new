@@ -1,0 +1,22 @@
+apiVersion: kargo.akuity.io/v1alpha1
+kind: Stage
+metadata:
+  name: test
+  namespace: kargo-demo
+spec:
+  subscriptions:
+    repos:
+      images:
+      - repoURL: https://argadepp.github.io/helm-chart
+        semverConstraint: ^12.0.3
+  promotionMechanisms:
+    gitRepoUpdates:
+    - repoURL: https://github.com/pratik3686/kargo-demo-new
+      writeBranch: stage/test
+      kustomize:
+        images:
+        - image: https://argadepp.github.io/helm-chart
+          path: helmapp/stages/test
+    argoCDAppUpdates:
+    - appName: kargo-demo-test
+      appNamespace: argocds
