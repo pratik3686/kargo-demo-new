@@ -4,7 +4,7 @@ kind: Kustomization
 helmCharts:
 - name: thanos
   version: 12.0.3
-  repo: https://charts.bitnami.com/bitnamis
+  repo: https://argadepp.github.io/helm-chart
   valuesFile: values.yaml
   releaseName: test-thanos
   ## IF needed
