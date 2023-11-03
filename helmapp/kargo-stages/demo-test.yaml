@@ -1,0 +1,23 @@
+apiVersion: kargo.akuity.io/v1alpha1
+kind: Stage
+metadata:
+  name: qa
+  namespace: kargo-demo
+spec:
+  subscriptions:
+    repos:
+      charts:
+      - name: thanos        
+        registryURL: https://argadepp.github.io/helm-chart
+        semverConstraint: ^12.0.3
+  promotionMechanisms:
+    gitRepoUpdates:
+    - repoURL: https://github.com/pratik3686/kargo-demo-new
+      writeBranch: helm/test
+      kustomize:
+        images:
+        - image: https://argadepp.github.io/helm-chart
+          path: helmapp/stages/test
+    argoCDAppUpdates:
+    - appName: kustomize-thanos-app-test
+      appNamespace: argocds
