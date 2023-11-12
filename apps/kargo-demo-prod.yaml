@@ -9,10 +9,10 @@ spec:
   project: default
   source:
     repoURL: https://github.com/pratik3686/kargo-demo-new
-    targetRevision: stage/prod
+    targetRevision: main
     path: stages/prod
   destination:
-    server: https://host.docker.internal:59328
+    server: https://host.docker.internal:61948
     namespace: kargo-demo-prod
   syncPolicy:
     automated: # automated sync by default retries failed attempts 5 times with following delays between attempts ( 5s, 10s, 20s, 40s, 80s ); retry controlled using `retry` field.
