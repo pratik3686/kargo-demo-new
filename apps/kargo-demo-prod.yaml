@@ -9,7 +9,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/pratik3686/kargo-demo-new
-    targetRevision: stage/prod
+    targetRevision: main
     path: stages/prod
   destination:
     server: https://host.docker.internal:61948
