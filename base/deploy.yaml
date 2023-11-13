@@ -14,4 +14,4 @@ spec:
     spec:
       containers:
       - name: nginx 
-        image: ghcr.io/pratik3686/netflix:0.0.1
+        image: nasi101/netflix:latest
