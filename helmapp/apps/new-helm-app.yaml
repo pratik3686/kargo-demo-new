@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+  name: kustomize-thanos-app-test
+  namespace: argocd
+  annotations:
+    kargo.akuity.io/authorized-stage: kargo-demo:qa    
+spec:
+  destination:
+    namespace: utilities
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    chart: thanos
+    helm:
+      releaseName: thanos
+    repoURL: https://argadepp.github.io/helm-chart
+    targetRevision: 12.0.3
+  syncPolicy:
+    automated: # automated sync by default retries failed attempts 5 times with following delays between attempts ( 5s, 10s, 20s, 40s, 80s ); retry controlled using `retry` field.
+      prune: true # Specifies if resources should be pruned during auto-syncing ( false by default ).
+      selfHeal: true # Specifies if partial app sync should be executed when resources are changed only in target Kubernetes cluster and no git change detected ( false by default ).
+      allowEmpty: false # Allows deleting all application resources during automatic syncing ( false by default ).
+    syncOptions:
+    - ServerSideApply=true
+    - CreateNamespace=true
