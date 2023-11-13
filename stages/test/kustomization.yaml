@@ -16,7 +16,7 @@ patches:
 images:
 - name: ghcr.io/pratik3686/netflix
   newName: ghcr.io/pratik3686/netflix
-  newTag: 0.0.1
+  newTag: 0.0.2
 - name: nginx
   newName: nginx
   newTag: 0.0.1
