@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: https://github.com/pratik3686/kargo-demo-new
     targetRevision: stage/uat
-    path: stage/uat
+    path: stages/uat
   destination:
     server: https://host.docker.internal:61922
     namespace: kargo-demo-uat
