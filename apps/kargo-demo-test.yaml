@@ -9,7 +9,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/pratik3686/kargo-demo-new
-    targetRevision: stage/test
+    targetRevision: main
     path: stages/test
   destination:
     server: https://kubernetes.default.svc
