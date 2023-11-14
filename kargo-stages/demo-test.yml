@@ -6,22 +6,17 @@ metadata:
 spec:
   subscriptions:
     repos:
-      git:
-        - repoURL: https://github.com/morey-tech/kargo-demo/
-          branch: main
       images:
-        - repoURL: ghcr.io/morey-tech/demo-app
-          updateStrategy: Latest
-          ignoreTags:
-          - latest
+      - repoURL: ghcr.io/pratik3686/netflix
+        semverConstraint: ^0.0.1
   promotionMechanisms:
     gitRepoUpdates:
-      - repoURL: https://github.com/morey-tech/kargo-demo/
-        writeBranch: stages/test
-        kustomize:
-          images:
-            - image: nginx
-              path: stages/test
+    - repoURL: https://github.com/pratik3686/kargo-demo-new
+      writeBranch: stage/test
+      kustomize:
+        images:
+        - image: ghcr.io/pratik3686/netflix
+          path: stages/test
     argoCDAppUpdates:
-      - appName: kargo-demo-test
-        appNamespace: argocd
+    - appName: kargo-demo-test
+      appNamespace: argocd
