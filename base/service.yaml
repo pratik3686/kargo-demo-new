@@ -3,11 +3,10 @@ kind: Service
 metadata:
   name: kargo-demo
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     app: kargo-demo
   ports:
   - protocol: TCP
-    port: 3000
+    port: 443
     targetPort: 80
-    nodePort: placeholder

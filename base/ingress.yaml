@@ -1,0 +1,15 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: kargo-demo-netflix-service
+spec:
+  rules:
+    - host: netflix.local.pratikargade.online
+      http:
+        paths:
+          - pathType: ImplementationSpecific
+            backend:
+              service:
+                name: kargo-demo
+                port:
+                  number: 443

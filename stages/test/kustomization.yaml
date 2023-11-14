@@ -5,18 +5,18 @@ resources:
 - ../../base
 - configmap.yaml
 
-patches:
-- patch: |-
-    - op: replace
-      path: /spec/ports/0/nodePort
-      value: 30081
-  target:
-    kind: Service
-    name: kargo-demo
+# patches:
+# - patch: |-
+#     - op: replace
+#       path: /spec/ports/0/nodePort
+#       value: 30081
+#   target:
+#     kind: Service
+#     name: kargo-demo
 images:
 - name: ghcr.io/pratik3686/netflix
   newName: ghcr.io/pratik3686/netflix
-  newTag: 0.0.4
+  newTag: 0.0.6
 - name: nginx
   newName: nginx
   newTag: 0.0.1
